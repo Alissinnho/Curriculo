@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alisson Daledone | Ciência da Computação</title>
+<meta name="description" content="Currículo e projetos de Alisson Daledone, estudante de Ciência da Computação na PUCPR.">
+<style>
+:root{
+  --bg:#f2f6f8; --surface:#ffffff; --ink:#12263a; --muted:#52667a;
+  --line:#d3dde5; --accent:#c77700; --accent-ink:#ffffff; --tag:#e4edf3;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1b29;--surface:#152638;--ink:#e8eff5;--muted:#9fb2c4;--line:#27405a;--accent:#f2a93b;--accent-ink:#0e1b29;--tag:#1d3248}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font:700 18px var(--serif);text-decoration:none}
+nav{display:flex;gap:4px}
+nav a{padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+
+.view{display:none;padding:56px 0 80px}
+.view.on{display:block}
+
+h1{font:700 clamp(2.4rem,7vw,3.8rem)/1.05 var(--serif);margin:0 0 12px;letter-spacing:-.02em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:0 0 24px}
+.contacts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 56px;padding:0;list-style:none}
+.contacts a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);text-decoration:none;font-weight:600;font-size:15px}
+.contacts a:hover{border-color:var(--accent)}
+
+h2{font:700 1.6rem/1.2 var(--serif);margin:0 0 20px}
+section{margin-bottom:52px}
+
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 28px 8px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-30px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--line)}
+.timeline li.now::before{border-color:var(--accent);background:var(--accent)}
+.timeline h3{font-size:1.1rem;margin:0}
+.timeline .where{color:var(--muted);margin:0}
+.timeline .when{display:inline-block;margin:6px 0;font-size:.9rem;color:var(--muted);font-weight:600}
+.timeline p.desc{margin:4px 0 0;max-width:62ch}
+.placeholder{color:var(--muted);font-style:italic}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.skills h3{font-size:1rem;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--tag);padding:5px 12px;border-radius:6px;font-size:.92rem;font-weight:600}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:32px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font:700 1.15rem var(--serif);margin:0 0 8px}
+.card p{margin:0 0 16px;color:var(--muted);flex:1}
+.card .chips{margin-bottom:18px}
+.card .chips li{font-size:.82rem;padding:3px 10px}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:8px 14px;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{opacity:.85}
+.empty{padding:40px;border:2px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center}
+
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#curriculo">Alisson Daledone</a>
+    <nav aria-label="Principal">
+      <a href="#curriculo" data-view="curriculo">Currículo</a>
+      <a href="#projetos" data-view="projetos">Projetos</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ========== TELA 1: CURRÍCULO ========== -->
+  <div class="view" id="v-curriculo">
+    <h1>Alisson Daledone</h1>
+    <p class="lead">Estudante de Ciência da Computação na PUCPR, estagiário na Celepar, com experiência em pesquisa sobre modelos de linguagem de código aberto.</p>
+    <ul class="contacts">
+      <li><a href="mailto:alissondaledonehass@gmail.com">alissondaledonehass@gmail.com</a></li>
+      <li><a href="tel:+5541991887720">(41) 99188-7720</a></li>
+      <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+
+    <section aria-labelledby="h-exp">
+      <h2 id="h-exp">Experiência</h2>
+      <ol class="timeline">
+        <li class="now">
+          <h3>Estagiário</h3>
+          <p class="where">Celepar</p>
+          <span class="when">Junho 2026 – Presente</span>
+          <p class="desc placeholder">Descreva aqui suas atividades, tecnologias e resultados.</p>
+        </li>
+        <li>
+          <h3>Pesquisador em Iniciação Tecnológica (PIBITI – Voluntário)</h3>
+          <p class="where">PUCPR</p>
+          <span class="when">Agosto 2025 – Setembro 2026</span>
+          <p class="desc">Comparação de modelos de linguagem de código aberto para um software de revisão sistemática de literatura.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="h-form">
+      <h2 id="h-form">Formação acadêmica</h2>
+      <ol class="timeline">
+        <li class="now">
+          <h3>Bacharelado em Ciência da Computação</h3>
+          <p class="where">Pontifícia Universidade Católica do Paraná, Escola Politécnica</p>
+          <span class="when">2024 – Presente · 6º período</span>
+        </li>
+        <li>
+          <h3>Técnico em Sistemas de Energias Renováveis</h3>
+          <p class="where">Centro Estadual de Educação Profissional Newton Freire Maia</p>
+          <span class="when">2019 – 2022</span>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="h-hab">
+      <h2 id="h-hab">Habilidades</h2>
+      <div class="skills">
+        <div>
+          <h3>Linguagens de programação</h3>
+          <ul class="chips"><li>Python</li><li>JavaScript</li><li>Java</li><li>C</li></ul>
+        </div>
+        <div>
+          <h3>Idiomas</h3>
+          <ul class="chips"><li>Inglês intermediário</li></ul>
+        </div>
+        <div>
+          <h3>Outras ferramentas</h3>
+          <ul class="chips"><li>Pacote Office</li><li>Power BI</li></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== TELA 2: PROJETOS ========== -->
+  <div class="view" id="v-projetos">
+    <h1>Projetos</h1>
+    <p class="lead">Alguns dos projetos que desenvolvi. Cada card leva ao repositório no GitHub.</p>
+    <div class="grid" id="grid"></div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">© <span id="ano"></span> Alisson Daledone</div>
+</footer>
+
+<script>
+/* ============================================================
+   SEUS PROJETOS: edite, apague ou adicione itens nesta lista.
+   Campos: titulo, descricao, tecnologias (lista), repo, demo
+   "repo" e "demo" são opcionais: deixe "" para esconder o botão.
+   ============================================================ */
+const projetos = [
+  {
+    titulo: "Nome do projeto 1",
+    descricao: "Explique em uma ou duas frases o que o projeto faz e qual problema resolve.",
+    tecnologias: ["Python", "Power BI"],
+    repo: "https://github.com/SEU-USUARIO/projeto-1",
+    demo: ""
+  },
+  {
+    titulo: "Nome do projeto 2",
+    descricao: "Explique em uma ou duas frases o que o projeto faz e qual problema resolve.",
+    tecnologias: ["Java"],
+    repo: "https://github.com/SEU-USUARIO/projeto-2",
+    demo: "https://SEU-USUARIO.github.io/projeto-2"
+  }
+];
+
+/* ---------- Renderização dos projetos ---------- */
+const grid = document.getElementById("grid");
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text) e.textContent = text;
+  return e;
+}
+function link(href, label, cls){
+  const a = el("a", "btn " + cls, label);
+  a.href = href; a.target = "_blank"; a.rel = "noopener";
+  return a;
+}
+if(projetos.length === 0){
+  grid.replaceWith(el("div", "empty", "Nenhum projeto por aqui ainda. Adicione itens na lista \"projetos\" do arquivo index.html."));
+}else{
+  projetos.forEach(p => {
+    const card = el("article", "card");
+    card.append(el("h3", "", p.titulo), el("p", "", p.descricao));
+    const chips = el("ul", "chips");
+    (p.tecnologias || []).forEach(t => chips.append(el("li", "", t)));
+    card.append(chips);
+    const links = el("div", "links");
+    if(p.repo) links.append(link(p.repo, "Ver código", "primary"));
+    if(p.demo) links.append(link(p.demo, "Ver online", ""));
+    card.append(links);
+    grid.append(card);
+  });
+}
+
+/* ---------- Navegação entre telas (#curriculo / #projetos) ---------- */
+function route(){
+  const nome = location.hash === "#projetos" ? "projetos" : "curriculo";
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-" + nome));
+  document.querySelectorAll("nav a").forEach(a => {
+    if(a.dataset.view === nome) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+  document.title = (nome === "projetos" ? "Projetos" : "Currículo") + " | Alisson Daledone";
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+route();
+document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
